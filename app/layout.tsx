@@ -1,15 +1,20 @@
+"use client"
+
 import "@/styles/globals.css"
+import { useState } from "react"
 import { Metadata } from "next"
 
-import { siteConfig } from "@/config/site"
+import { AllFolders } from "@/types/nav"
+/* import { siteConfig } from "@/config/site" */
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import LeftSidebar from "@/components/shared/Sidebar"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
+import QuickAccess from "@/components/shared/QuickAccess"
 
-export const metadata: Metadata = {
+/* export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
@@ -24,17 +29,22 @@ export const metadata: Metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-}
+} */
 
 interface RootLayoutProps {
   children: React.ReactNode
 }
+const AllFolders = [
+  { name: "inbox" },
+  {name:"sent"}
+]
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  const [open, setOpen] = useState(true)
+
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head />
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
@@ -42,15 +52,23 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="relative flex min-h-screen flex-col">
+            
               <SiteHeader />
-              <div className="flex-1">
-                <LeftSidebar />
+             
+                <nav className="order-first overflow-y-auto">
+                <LeftSidebar
+                  open={open}
+                  AllFolders={AllFolders as AllFolders[]}
+                  />
+                </nav>
+                 
                 {children}
-              </div>
-            </div>
+            
             <TailwindIndicator />
           </ThemeProvider>
+              {/*  <aside className="absolute hidden overflow-y-auto border-l border-slate-700 bg-red-600 lg:block">
+            <QuickAccess />
+          </aside> */}
         </body>
       </html>
     </>

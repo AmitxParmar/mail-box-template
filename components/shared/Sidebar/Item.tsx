@@ -41,19 +41,19 @@ const LeftSidebarItem = ({ open, folder }: PropsType) => {
       <div className="w-full">
         <Link
           className="flex items-center justify-center rounded-lg p-2 text-base font-medium text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-          href={"/mail/u/" + folder.name.toLowerCase()}
+          href={"/mail/u/" + folder?.name?.toLowerCase()}
         >
           {open ? (
             <img
               src={
                 MailBoxIcons[
-                  (folder.name.toLowerCase() as MailBoxIconsType) || "drafts"
+                  (folder?.name?.toLowerCase() as MailBoxIconsType) || "drafts"
                 ].src
               }
               className="h-6 w-6"
             />
           ) : (
-            <XTooltip text={changeCase.sentenceCase(folder.name)}>
+            <XTooltip text={changeCase.sentenceCase(folder?.name)}>
               <img
                 src={
                   MailBoxIcons[

@@ -11,6 +11,7 @@ export const Icons = {
       height="196.000000pt"
       viewBox="100 0 390.000000 300.000000"
       preserveAspectRatio="xMidYMid meet"
+      {...props}
     >
       <g
         transform="translate(0.000000,196.000000) scale(0.100000,-0.100000)"
@@ -140,7 +141,7 @@ export const Icons = {
   ),
   star: (props: IconProps) => (
     <svg
-      className="h-5 w-5 ml-2  text-gray-500 hover:text-blue-300 dark:text-white   dark:hover:text-yellow-300 cursor-pointer"
+      className="ml-2 h-5 w-5  cursor-pointer text-gray-500 hover:text-blue-300 dark:text-white dark:hover:text-yellow-300"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -453,7 +454,7 @@ export const Icons = {
   ),
   loadingOverlay: ({ size = "xl" }: { size?: string }) => (
     <svg
-      className="animate-spin h-12 w-12 text-rose-600"
+      className="h-12 w-12 animate-spin text-rose-600"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -492,7 +493,7 @@ export const Icons = {
   ),
   box: ({ size = "xl" }: { size?: string }) => (
     <svg
-      className={cn("w-8 h-8 fill-current", size)}
+      className={cn("h-8 w-8 fill-current", size)}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"
@@ -502,7 +503,7 @@ export const Icons = {
   ),
   home: ({ size = "xl" }: { size?: string }) => (
     <svg
-      className="w-6 h-6 stroke-current"
+      className="h-6 w-6 stroke-current"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -518,7 +519,7 @@ export const Icons = {
   ),
   analytics: ({ size = "xl" }: { size?: string }) => (
     <svg
-      className="w-6 h-6 stroke-current"
+      className="h-6 w-6 stroke-current"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -534,7 +535,7 @@ export const Icons = {
   ),
   cart: ({ size = "xl" }: { size?: string }) => (
     <svg
-      className="w-6 h-6 stroke-current"
+      className="h-6 w-6 stroke-current"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -550,7 +551,7 @@ export const Icons = {
   ),
   settingsVertical: ({ size = "xl" }: { size?: string }) => (
     <svg
-      className="w-6 h-6 stroke-current"
+      className="h-6 w-6 stroke-current"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -566,7 +567,7 @@ export const Icons = {
   ),
   message: ({ size = "xl" }: { size?: string }) => (
     <svg
-      className="w-6 h-6 stroke-current"
+      className="h-6 w-6 stroke-current"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -582,7 +583,7 @@ export const Icons = {
   ),
   userIcon: ({ size = "xl" }: { size?: string }) => (
     <svg
-      className="w-6 h-6 stroke-current"
+      className="h-6 w-6 stroke-current"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
@@ -596,6 +597,7 @@ export const Icons = {
       />
     </svg>
   ),
+
   deleted: ({ size = "xl" }: { size?: string }) => (
     <svg className={cn(size, "svg-icon")} viewBox="0 0 20 20">
       <path

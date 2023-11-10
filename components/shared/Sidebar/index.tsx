@@ -1,16 +1,19 @@
+"use client"
+
 import React from "react"
 
+import { AllFolders } from "@/types/nav"
 import DisplayLeftSidebarCard from "@/components/common/displayCard"
 import { Icons } from "@/components/icons"
 
 import LeftSidebarItem from "./Item"
 
-const LeftSidbar = ({
+const LeftSidebar = ({
   open,
   AllFolders,
 }: {
   open: boolean
-  AllFolders: any[]
+  AllFolders: AllFolders[]
 }) => {
   return (
     <div className={`lg:!block ${open ? "hidden" : ""}`}>
@@ -61,7 +64,7 @@ const LeftSidbar = ({
                     </div>
                   </li>
                 </ul>
-                {open && <DisplayLeftSidebarCard />}
+                {/* {open && <DisplayLeftSidebarCard />} */}
               </div>
             </div>
             <div className="flex items-center justify-center gap-x-5">
@@ -140,4 +143,4 @@ const LeftSidbar = ({
   )
 }
 
-export default LeftSidbar
+export default LeftSidebar

@@ -1,10 +1,10 @@
-import {
+/* import {
   AddressObject,
   Attachment,
   EmailAddress,
   HeaderValue,
   ParsedMail,
-} from "mailparser"
+} from "mailparser" */
 
 import { Icons } from "@/components/icons"
 
@@ -58,7 +58,7 @@ export interface MailBoxData {
   name: string
   address: string
 }
-export interface ReadMailResult {
+/* export interface ReadMailResult {
   from: {
     name: {
       name: string
@@ -76,15 +76,15 @@ export interface ReadMailResult {
     inReplyTo: HeaderValue | undefined
     mimeVersion: HeaderValue | undefined
   }
-}
+} */
 export interface AllFolders {
   path: string
-  pathAsListed: string
-  flags: Record<string, any>
-  delimiter: string
-  listed: boolean
-  parentPath: string
-  parent: any[]
-  name: string
-  subscribed: boolean
+  pathAsListed?: string
+  flags?: Record<string, any>
+  delimiter?: string
+  listed?: boolean
+  parentPath?: string
+  parent?: any[]
+  name?: string
+  subscribed?: boolean
 }
